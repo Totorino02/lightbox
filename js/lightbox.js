@@ -1,13 +1,16 @@
 import {disableBodyScroll, enableBodyScroll} from "./body-scroll-lock.js";
 
+
 /**
- * @param{url}
- * @param{images}
+ * @author HOUNSI Madouvi antoine-sebastien 
+ * @networks {github: @Totorino02, gmail:antoinehounsi3@gmail.com}
+ * @param{string url}
+ * @param{string[] images}
  */
 class Lightbox{
 
     static init(){
-        let images = document.querySelectorAll('a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"]');
+        let images = document.querySelectorAll('a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"], a[href$=".webp"]');
         images = Array.from(images)
 
         let imgUrls = images.map(link => link.getAttribute('href'));
