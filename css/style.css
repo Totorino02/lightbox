@@ -1,0 +1,104 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    gap: 20px;
+}
+
+.container img{
+    height: 400px;
+}
+
+
+.lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    z-index: 50000;
+    animation: lightboxIn .8s;
+}
+
+
+.lightbox-container{
+    margin: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    z-index: 50001;
+}
+
+.lightbox-container img{
+    max-height: 100vh;
+    position: absolute;
+}
+
+.lightbox .fadeOut{
+    animation: lightboxOut .5s;
+}
+
+.image_loader{
+    width: 38px;
+    height: 38px;
+    opacity: .5;
+    background: url(../images/loader.svg) center center no-repeat;
+}
+
+.lightbox-prev,
+.lightbox-next{
+    position: fixed ;
+    border:none;
+    background: url(../images/arrow.svg) center center / 100% 100% no-repeat;
+    top: 0;
+    right: 0;
+    width: 50px;
+    margin: 0 10px;
+    height: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 50001;
+    transition: opacity .3;
+}
+
+.lightbox-prev{
+    transform: rotate(180deg);
+    left: 0;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover{
+    opacity: 1;
+}
+
+.lightbox-cancel{
+    position: fixed ;
+    border:none;
+    background: url(../images/cancel.svg) center center / 40px 40px no-repeat;    
+    top: 0;
+    right: 0;
+    margin: 40px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 50002;
+}
+
+.lightbox-cancel:hover{
+    opacity: 1;
+}
+
+@keyframes lightboxIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes lightboxOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
