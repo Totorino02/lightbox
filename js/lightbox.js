@@ -10,7 +10,7 @@ import {disableBodyScroll, enableBodyScroll} from "./body-scroll-lock.js";
 class Lightbox{
 
     static init(){
-        let images = document.querySelectorAll('a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"], a[href$=".webp"]');
+        let images = document.querySelector('.lightbox-img').querySelectorAll('a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"], a[href$=".webp"]');
         images = Array.from(images)
 
         let imgUrls = images.map(link => link.getAttribute('href'));
@@ -109,20 +109,6 @@ class Lightbox{
         dom.querySelector('.lightbox-next').addEventListener('click', this.next.bind(this));
         return dom;
     }
-
-
-    /**
-     * 
-        <div class="lightbox">
-            <div class="lightbox-container">
-                <img src="images/davido.jpg" alt="">
-            </div>
-            <button class="lightbox-prev">Précedent</button>
-            <button class="lightbox-next">Suivant</button>
-            <button class="lightbox-cancel">Cancel</button>
-        </div>
-     */
-
 }
 
 Lightbox.init();

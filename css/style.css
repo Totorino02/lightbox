@@ -1,11 +1,11 @@
-.container{
+.lightbox-img{
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
     gap: 20px;
 }
 
-.container img{
+.lightbox-img img{
     height: 400px;
 }
 
@@ -38,7 +38,10 @@
 }
 
 .lightbox .fadeOut{
-    animation: lightboxOut .5s;
+    opacity: 0;
+    transition: .3s;
+    
+    /* animation: lightboxOut .5s; */
 }
 
 .image_loader{
